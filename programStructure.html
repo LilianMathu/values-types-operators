@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Object Oriented Programming in Javascript
+    </title>
+    <meta charset="UTF-8">
+    </meta>
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <script src="js/script.js"></script>
+</head>
+
+<body>
+
+    <div class="topnav">
+        <a class="active" href="index.html">Home</a>
+        <a href="programStructure.html">Program Structure</a>
+        <a href="#">Contact</a>
+        <a href="#">About</a>
+    </div>
+
+    <h4>Expressions and statements</h4>
+    <p>
+        A fragment of code that produces a value is called an expression. Every value
+        that is written literally (such as 22 or "psychoanalysis" ) is an expression. An
+        expression between parentheses is also an expression, as is a binary operator
+        applied to two expressions or a unary operator applied to one.
+        <br>
+        <b>JavaScript statement</b>
+        corresponds to a full sentence. A program is a list of statements.
+        The simplest kind of statement is an expression with a semicolon after it.
+    </p>
+    <h4>Control flow</h4>
+    <p>
+
+        <b>while statement</b>
+        <pre><code>
+        while(condition){
+        statement;
+        }
+        </code></pre>
+        While condition is truthy, statement will be executed.
+        <br>
+
+
+        <b>if...else statement</b>
+        <pre><code>
+        if(condition){
+        statement;
+        }
+        else{
+           statement2] 
+        }
+        </code></pre>
+        <br> otherwise, statement2 will be
+        executed (assuming the else part is present).
+        If condition is truthy, statement1 will be executed; otherwise, statement2 will be
+        executed (assuming the else part is present).
+        <br><br>
+
+
+        <b>do...while statement</b>
+        <pre><code>
+        do{
+        statement
+        increment;
+        }
+        while(condition){
+            stmts;
+
+        };
+        </code></pre>
+        statement is executed at least once, and is repeatedly executed as long as condition
+        is truthy.
+    <br>
+
+  <b> for statement</b>
+        <pre><code>
+            for([initialization]; [condition]; [final-expression]){
+            statement;
+            }
+        </code></pre>
+        <br>
+
+        Before the loop runs, initialization is executed. As long as condition is true,
+        statement is executed, then final-expression is executed before testing condition
+        again.
+    </p>
+
+</body>
+
+</html>

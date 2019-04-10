@@ -8,14 +8,14 @@
     <meta charset="UTF-8">
     </meta>
     <link rel="stylesheet" type="text/css" href="css/styles.css">
-    <script src="js/script.js"></script>
+    <script src="js/loops.js"></script>
 </head>
 
 <body>
 
     <div class="topnav">
         <a class="active" href="index.html">Home</a>
-        <a href="inheritance.html">Inheritance</a>
+        <a href="programStructure.html">Program Structure</a>
         <a href="#">Contact</a>
         <a href="#">About</a>
     </div>
@@ -381,12 +381,12 @@
     </p>
     <h4>Converting to Boolean</h4>
     <p>
-            You can convert any value to a boolean by using the “not” operator ( ! )
-            twice. Using it once converts the value to a boolean, but the opposite of what you
-            want; using it again converts it to what you expect. As with numeric conversion, you
-            can also use the Boolean constructor (again, without the new keyword) to achieve the
-            same result:<br>
-            <pre><code>
+        You can convert any value to a boolean by using the “not” operator ( ! )
+        twice. Using it once converts the value to a boolean, but the opposite of what you
+        want; using it again converts it to what you expect. As with numeric conversion, you
+        can also use the Boolean constructor (again, without the new keyword) to achieve the
+        same result:<br>
+        <pre><code>
             const n = 0;
             const b1 = !!n;
             const b2 = Boolean(n);
@@ -395,6 +395,13 @@
             // false
         </code></pre>
     </p>
+    <b>note: </b>The function Number converts a value to a number.
+    <br>
+    console.log(Number("5"));
+    <br>
+    The Number.isNaN function is a standard JavaScript function that returns
+    true only if the argument it is given is NaN . The Number function happens to
+    return NaN when you give it a string that doesn’t represent a valid number
 
 
 
