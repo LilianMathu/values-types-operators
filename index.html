@@ -21,66 +21,95 @@
     </div>
 
     <h3>Values, Types and Operators</h3>
-    <h4>Operators</h4>
+    <h4>Identifier Names</h4>
+    <p> Variable and constant names (as well as function names, which we’ll cover in Chap‐
+        ter 6) are called identifiers, and they have naming rules:<br>
+        • Identifiers must start with a letter, dollar sign ($), or underscore (_).<br>
+        • Identifiers consist of letters, numbers, the dollar sign ($), and underscore (_).<br>
+        • Unicode characters are allowed (for example, π or ö).<br>
+        • Identifiers cannot be a reserved word.<br>
+    </p>
+
+    <p>A variable is essentially a named value, and as the name implies, the value can change at any time.
+        It is conventional (but not required) for constants that refer to a specific number or
+        string to be named with all uppercase letters and underscores. This makes them easy
+        to spot in your code, and is a visual cue that you shouldn’t try to change their value.
+        <br>
+    </p>
+    <h4>Literals</h4>
     <p>
-        <ul>
-            <li>Multiplication</li>
-            <li>Division</li>
-            <li>Modulus</li>
-            <li>Addition</li>
-            <li>Subtraction</li>
-            <li>Unary operator</li>
-        </ul>
-        <p>
-            <b>Unary Operators include:</b>
-            <ol>
-                <b>
-                    <li>typeof</li>
-                </b>
-                <p>
-                    typeof operator is a unary operator, i.e, it ooperates on one operand only.
-                    It produces a string value naming the type of the value
-                    you give it.<br>
-                    <pre><code>console.log(typeof 4.5)
+        The word literal means that you’re providing the value directly in the program. Essentially,
+        a literal is a way to create a value; JavaScript takes the literal value you provide and creates
+        a data value from it.
+        It’s important to understand the difference between a literal and an identifier.<br>
+        JavaScript is able to distinguish the identifier from the literal by the use of quotation
+        marks (numbers don’t need any sort of quotation because identifiers can’t start with a
+        number). Consider the following example:<br>
+
+        let room1 = "conference_room_a"; // "conference_room_a" (in quotes). It is a literal
+    </p>
+    <h4>Operators</h4>
+    <ul>
+        <li>Multiplication</li>
+        <li>Division</li>
+        <li>Modulus</li>
+        <li>Addition</li>
+        <li>Subtraction</li>
+        <li>Unary operator</li>
+    </ul>
+    <p>
+        <b>Unary Operators include:</b>
+        <ol>
+            <b>
+                <li>typeof</li>
+            </b>
+            <p>
+                typeof operator is a unary operator, i.e, it ooperates on one operand only.
+                It produces a string value naming the type of the value
+                you give it.<br>
+                <pre><code>console.log(typeof 4.5)
                     // → number
                     console.log(typeof "x")
                     // → 'string'
                     typeof {};
                     //'object'
                     </code></pre>
-                    <pre><code>
+                <pre><code>
                         console.log(type of "5" === 5);
                     </code>
                     </pre>
-                    <br>
-                    The result is false. This is because typeof operates on the "5" first. The result is a string.
-                    A stringis not equal to 5.
-                    <br>
-                    <pre><code>
+                <br>
+                The result is false. This is because typeof operates on the "5" first. The result is a string.
+                A stringis not equal to 5.
+                <br>
+                <pre><code>
                         console.log(typeof "name" === string);
                     </code></pre>
-                    <br>
-                    The code above will print true
-                </p><br>
-
-                <b>
-                    <li>Minus operator</li>
-                </b>
-                <p>
-                    The minus operator can be used both as a binary operator and as a <b>unary operator.</b>
-                   <pre><code> console.log(- (10 - 2))</code></pre>
-                </p>
-
                 <br>
+                The code above will print true
+            </p><br>
+
+            <b>
+                <li>Minus operator</li>
+            </b>
+            <p>
+                The minus operator can be used both as a binary operator and as a <b>unary operator.</b>
+                <pre><code> console.log(- (10 - 2))</code></pre>
+            </p>
+
+            <br>
+            <b>
                 <li>The ! operator</li>
-                <p>
-                    It turns a statement from negative to positive and from positive to negative.
-                </p>
+            </b>
+            <p>
+                It turns a statement from negative to positive and from positive to negative.
+            </p>
 
-            </ol>
-        </p>
-
+        </ol>
     </p>
+
+
+    <br><br>
     <p>
         Modulus prints the remainder.
         <br>
@@ -108,6 +137,266 @@
         tricks. Apart from being able to span lines, they can also embed other values.<br>
         <pre><code> `half of 100 is ${100 / 2}` </code></pre>
     </p>
+    <h4>Binary Operators</h4>
+    <p>
+        They operate on two values and produces either a true or a false.
+        The way strings are ordered is roughly alphabetic but not really what you’d
+        expect to see in a dictionary: <b>uppercase letters are always “less” than lowercase
+            ones,</b> so "Z" < "a" , and nonalphabetic characters (!, -, and so on) are also included in the ordering.
+            When comparing strings, JavaScript goes over the characters from left to right, comparing the Unicode codes
+            one by one. Other similar operators are>= (greater than or equal to),
+            and !=(not equal to).
+    </p>
+    <p>
+        There is only one value in JavaScript that is not equal to itself, and that is
+        NaN (“not a number”).
+        <br>
+        <pre><code>console.log(NaN == NaN)
+        // → false
+
+        </code></pre>
+        <br>
+        NaN is supposed to denote the result of a nonsensical computation, and as
+        such, it isn’t equal to the result of any other nonsensical computations.
+    </p>
+    <h4>Logical operators</h4>
+    <P>
+        There are also some operations that can be applied to Boolean values them-
+        selves. JavaScript supports three logical operators: and, or, and not. These
+        can be used to “reason” about Booleans. <br>
+        The && operator represents logical and. It is a binary operator, and its result
+        is true only if both the values given to it are true.<br>
+        The || operator denotes logical or. It produces true if either of the values
+        given to it is true. <br>
+        Not is written as an exclamation mark ( ! ). It is a unary operator that flips
+        the value given to it— !true produces false , and !false gives true .
+    </P>
+    <p>
+        <b>NB:</b>|| has the lowest precedence, then comes && , then the comparison operators ( > , == ,
+        and so on), and then the rest.
+    </p>
+    <h4>Ternary operator</h4>
+    <p>
+        It operates on three values.It is written with a question mark and a colon, like
+        this
+        <pre><code>
+        console.log(true ? 1 : 2);
+        // → 1
+        console.log(false ? 1 : 2);
+        // → 2
+        </code></pre>
+        This one is called the conditional operator (or sometimes just the ternary
+        operator since it is the only such operator in the language). The value on the
+        left of the question mark “picks” which of the other two values will come out.
+        When it is true, it chooses the middle value, and when it is false, it chooses the
+        value on the right.
+    </p>
+    <h4>Empty values</h4>
+    <p>
+        There are two special values, written null and undefined , that are used to
+        denote the absence of a meaningful value. They are themselves values, but
+        they carry no information.
+    </p>
+    <h4>Objects</h4>
+    <p>
+        Like the primitive types, objects
+        have a literal syntax: curly braces ( { and } ). Because curly braces come in pairs, it
+        allows us to express an object’s contents. Let’s start with an empty object:<br>
+        <pre><code>const obj = {};</code></pre>
+        <br>
+        The contents of an object are called properties (or members), and properties consist of
+        a name (or key) and value. Property names must be strings or symbols, and values can
+        be any type (including other objects).
+        <br>
+        <pre><code>
+            const sam3 = {
+                name: 'Sam',
+                classification: {
+                kingdom: 'Anamalia',
+                phylum: 'Chordata',
+                class: 'Mamalia',
+                order: 'Carnivoria',
+                family: 'Felidae',
+                subfaimily: 'Felinae',
+                genus: 'Felis',
+                species: 'catus',
+                },
+                };
+    </code></pre>
+        <br>
+        Consider the different ways we can access Sam the cat’s family (it also
+        doesn’t matter if we use single or double quotes or even backticks):
+        Objects
+        <pre><code>
+           //dot notation on both objects
+            sam3.classification.family;<br>
+           
+           // using square brackets for one object. It could be the first of the second
+            sam3["classification"].family;<br>
+            sam3.classification["family"];<br>
+
+           //Using square brackets for both objects 
+            sam3["classification"]["family"];<br>
+
+       </code></pre>
+
+        <br>
+    </p>
+    <p>
+        Objects can also contain <b>functions</b>. Here’s how we add a function to sam3 :<br>
+
+        <pre><code>
+        sam3.speak = function() { return "Meow!"; };<br>
+        </code></pre>
+
+
+        We can now call that function by adding parentheses to it:<br>
+
+
+        <pre><code>
+         sam3.speak();      // "Meow!"
+        </code></pre>
+
+        Lastly, we can delete a property from an object with the delete operator:
+        <pre><code>
+            delete sam3.classification;
+            delete sam3.speak;
+            // the whole classification tree is removed
+            // the speak function is removed
+        </code></pre>
+    </p>
+    <h4>Arrays</h4>
+    <p>
+        Arrays in JavaScript have the following properties:<br>
+        • Array size is not fixed; you can add or remove elements at any time.<br>
+        • Arrays are not homogeneous; each individual element can be of any type.<br>
+        • Arrays are zero-based. That is, the first element in the array is element 0.<br>
+        <br>
+        To create an array literal in JavaScript, use square brackets, with the elements of the
+        array separated by commas:<br>
+        const a1 = [1, 2, 3, 4];<br>
+        Arrays have a property length , which returns the number of elements in the array:
+        <pre><code>
+            const arr = ['a', 'b', 'c'];
+            arr.length;
+            // 3
+        </code></pre>
+        <br>
+        Arrays have a property length , which returns the number of elements in the array:
+        <pre><code>
+            const arr = ['a', 'b', 'c'];
+            arr.length;
+            // 3
+        </code></pre>
+
+        To access individual elements of an array, we simply use the numeric index of the ele‐
+        ment inside square brackets (similar to how we access properties on an object):
+        <pre><code>
+
+            const arr = ['a', 'b', 'c'];
+            
+            // get the first element:
+            arr[0];
+            // ->'a'
+
+            // the index of the last element in arr is arr.length-1:
+            arr[arr.length - 1];
+            // ->'c'
+        </code></pre>
+
+        To overwrite the value at a specific array index, you can simply assign to it:
+        <pre><code>
+
+            const arr = [1, 2, 'c', 4, 5];
+            arr[2] = 3;
+            // arr is now [1, 2, 3, 4, 5]
+        </code></pre>
+        <b>NOTE: </b>If you assign an index that is equal to or larger than the length of the array, the size of
+        the array will increase to accommodate the new element.
+
+    </p>
+    <h4>Data Type Conversion</h4>
+    <p>
+        <b>Converting to Numbers</b>
+        It’s very common to want to convert strings to numbers. When you collect input from
+        a user, it’s usually as a string, even if you’re collecting a numeric value from them.
+        JavaScript offers a couple of methods to convert strings to numbers. The first is to use
+        the Number object constructor:<br>
+        <pre><code>
+                const numStr = "33.3";
+                const num = Number(numStr);
+                // this creates a number value, *not*
+                // an instance of the Number object
+
+            </code></pre>
+        <br>
+        If the string can’t be converted to a number, NaN will be returned.<br>
+        The second approach is to use the built-in <b>parseInt or parseFloat </b>functions. These
+        behave much the same as the Number constructor, with a couple of exceptions. With
+        parseInt , you can specify a<b> radix</b>, which is the base with which you want to parse the
+        number. For example, this allows you to specify base 16 to parse hexadecimal num‐
+        bers. It is always recommended you specify a radix, even if it is 10 (the default).<br>
+        <pre><code>
+                    const a = parseInt("16 volts", 10);          //the " volts" is ignored, 16 is
+                                                                 //parsed in base 10
+                    <br>                                              
+                    const b = parseInt("3a", 16);                //parse hexadecimal 3a; result is 58
+                    <br>
+                    
+                    const c = parseFloat("15.5 kph");             //the " kph" is ignored; parseFloat
+                                                                 //always assumes base 10
+                    console.log(c);
+                    //->15.5
+                    //->undefined
+            </code></pre>
+        <br>
+        Sometimes, it is useful to convert boolean values to 1 (true) or 0 (false). The conver‐
+        sion uses the conditional.
+        <pre><code>
+                const b = true;
+                const n = b ? 1 : 0;
+        </code></pre>
+
+    </p>
+    <h4>Converting to String</h4>
+    <p>
+        All objects in JavaScript have a method toString() , which returns a string represen‐
+        tation. In practice, the default implementation isn’t particularly useful. It works well
+        for numbers, though it isn’t often necessary to convert a number to a string: that con‐
+        version usually happens automatically during string concatenation or interpolation.
+        But if you ever do need to convert a number to a string value, the toString() method
+        is what you want:
+        <pre><code>
+                const n = 33.5;
+                n;
+                // 33.5 - a number
+                const s = n.toString();
+                s;
+                // "33.5" - a string
+
+                const arr = [1, true, "hello"];
+                arr.toString();
+                // "1,true,hello"
+           </code></pre>
+    </p>
+    <h4>Converting to Boolean</h4>
+    <p>
+            You can convert any value to a boolean by using the “not” operator ( ! )
+            twice. Using it once converts the value to a boolean, but the opposite of what you
+            want; using it again converts it to what you expect. As with numeric conversion, you
+            can also use the Boolean constructor (again, without the new keyword) to achieve the
+            same result:<br>
+            <pre><code>
+            const n = 0;
+            const b1 = !!n;
+            const b2 = Boolean(n);
+            // "falsy" value
+            // false
+            // false
+        </code></pre>
+    </p>
+
+
 
 </body>
 
